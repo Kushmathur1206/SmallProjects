@@ -1,6 +1,6 @@
 print('Hello World')
 import cv2 
-image=cv2.imread(r'C:\Users\kushm\Downloads\image (5).png')
+image=cv2.imread('Enter location of image you want to convert to sketch')
 greyimg = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 blur = cv2.GaussianBlur(greyimg, (11,11), 0)
 invertedblur = cv2.bitwise_not(blur)
