@@ -48,7 +48,7 @@ def Submit():
 
 
    def checkprice():
-      headers={"User-Agent":'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36'}
+      headers={"Enter your User-Agent"}
       page=requests.get(URL.get(), headers=headers)
       soup=BeautifulSoup(page.content, 'html.parser')
       global title
@@ -78,12 +78,12 @@ def Submit():
       server = smtplib.SMTP('smtp.gmail.com',587)
       server.ehlo()
       server.starttls()
-      server.login('worklakshay21@gmail.com','wyzybtpgcpyviddr')
+      server.login('Enter your email-id','Security key')
 
       subject='Price Reduced! Hurry.'
       body='Your product {} is selling at a price below Rs {}. Go and Buy nowww at the link below: \n\n {}'.format(title.text,DP.get(),URL.get())
       msg = f"Subject: {subject}\n\n{body}".encode('utf-8')
-      server.sendmail('kushwork1206@gmail.com',Email.get(),msg)
+      server.sendmail('Enter your email-id',Email.get(),msg)
 
       Submit_label=Label(window,text='Thank you '+ Name.get() +', EMAIL HAS BEEN SENT!')
       Submit_label.grid(row=8,column=1)
